@@ -193,6 +193,16 @@ aux.sort_values(ascending=False)
 aux = data.groupby(['Fecha de diagnóstico']).size()
 aux.sort_values(ascending=False)
 
+# 22.
+
+cantidad_muertes = data[data['Estado'] == 'Fallecido'].shape[0]
+
+cantidad_recuperados = data.query('Recuperado == "Recuperado"').shape[0]
+cantidad_casos = data.shape[0]
+
+tasa_mortalidad = cantidad_muertes / cantidad_casos * 100
+
+tasa_recuperacion = cantidad_recuperados / cantidad_casos * 100
 
 
 
