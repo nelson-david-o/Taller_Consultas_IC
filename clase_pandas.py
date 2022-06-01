@@ -219,17 +219,17 @@ data2 = pd.DataFrame({'tasa_mortalidad_dep': tasa_mortalidad, 'tasa_recuperacion
 
 # 24.
 
-canti_muertes_departamento = data[data['Estado'] == 'Fallecido'].groupby('Nombre departamento').size()
+canti_muertes_ciudad = data[data['Estado'] == 'Fallecido'].groupby('Nombre municipio').size()
 
-canti_recuperados_departamento = data[data['Recuperado'] == 'Recuperado'].groupby('Nombre departamento').size()
+canti_recuperados_ciudad = data[data['Recuperado'] == 'Recuperado'].groupby('Nombre municipio').size()
 
-cantidad_casos = data.groupby('Nombre departamento').size()
+canti_casos_ciudad = data.groupby('Nombre municipio').size()
 
-tasa_mortalidad = canti_muertes_departamento / cantidad_casos * 100
+mortalidad_ciudad = canti_muertes_ciudad / canti_casos_ciudad * 100
 
-tasa_recuperacion = canti_recuperados_departamento / cantidad_casos * 100
+recuperacion_ciudad = canti_recuperados_ciudad / canti_casos_ciudad * 100
 
-data2 = pd.DataFrame({'tasa_mortalidad_dep': tasa_mortalidad, 'tasa_recuperacion_dep': tasa_recuperacion})
+data3 = pd.DataFrame({'tasa_mortalidad_ciu': mortalidad_ciudad, 'tasa_recuperacion_ciu': recuperacion_ciudad})
 
 
 
