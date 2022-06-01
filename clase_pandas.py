@@ -141,6 +141,18 @@ NumeroDePersonasFallecidas = aux.shape[0]
 
 data.sort_values(by='Tipo de recuperación',ascending=False )
 
+# 11. 
+
+data['Nombre departamento'].value_counts().head(10)
+
+# 12. 
+
+aux = data[(data['Estado'] == 'Fallecido')].groupby('Nombre departamento').size()
+aux.sort_values(ascending=False).head(10)
+
+
+
+
 
 
 
