@@ -132,6 +132,15 @@ NumeroDePersonasEnCasa = aux.shape[0]
 aux = data.loc[(data['Recuperado'] == 'Recuperado')]
 NumeroDePersonasRecuper = aux.shape[0]
 
+# 6. Número de personas que ha fallecido
+
+aux = data.loc[(data['Estado'] == 'Fallecido')]
+NumeroDePersonasFallecidas = aux.shape[0]
+
+# 10. Ordene de mayor a menor por tipo de atención
+
+data.sort_values(by='Tipo de recuperación',ascending=False )
+
 
 
 
