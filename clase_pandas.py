@@ -150,7 +150,14 @@ data['Nombre departamento'].value_counts().head(10)
 aux = data[(data['Estado'] == 'Fallecido')].groupby('Nombre departamento').size()
 aux.sort_values(ascending=False).head(10)
 
+# 13.
 
+aux = data[(data['Recuperado'] == 'Recuperado')].groupby('Nombre departamento').size()
+aux.sort_values(ascending=False).head(10)
+
+# 14. 
+
+data['Nombre municipio'].value_counts().head(10)
 
 
 
