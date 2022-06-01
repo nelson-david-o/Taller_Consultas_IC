@@ -245,6 +245,50 @@ data[(data['Recuperado'] == 'Recuperado')].groupby('Fecha de diagnóstico').size
 
 data[(data['Estado'] == 'Fallecido')].groupby('Fecha de diagnóstico').size().plot()
 
+# 28. 
+
+aux = data[(data['Estado'] == 'Fallecido')].groupby('Nombre departamento').size()
+
+aux.sort_values(ascending=False).head(10).plot()
+
+
+aux = data[(data['Recuperado'] == 'Recuperado')].groupby('Nombre departamento').size()
+
+aux.sort_values(ascending=False).head(10).plot()
+
+# 29.
+
+aux = data[(data['Estado'] == 'Fallecido')].groupby('Nombre municipio').size()
+
+aux.sort_values(ascending=False).head(10).plot()
+
+
+aux = data[(data['Recuperado'] == 'Recuperado')].groupby('Nombre municipio').size()
+
+aux.sort_values(ascending=False).head(10).plot()
+
+# 30.
+
+aux = data[(data['Estado'] == 'Fallecido')].groupby('Edad').size()
+
+aux.sort_values(ascending=False).head(10)
+
+# 31.
+
+data.groupby('Ubicación del caso').mean()
+
+# 32.
+
+data.groupby('Ubicación del caso').size().plot(kind='bar')
+
+# 33.
+
+data.groupby('Sexo').size().plot(kind='bar')
+
+# 34.
+
+data.groupby('Tipo de contagio').size().plot(kind='bar')
+
 
 
 
