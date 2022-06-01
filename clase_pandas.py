@@ -179,6 +179,20 @@ aux.sort_values(ascending=False)
 aux = data.groupby(['Nombre departamento', 'Nombre municipio', 'Sexo']).size()
 aux.sort_values(ascending=False)
 
+# 19. 
+
+data.groupby(['Nombre departamento', 'Nombre municipio', 'Sexo'])['Edad'].mean()
+
+# 20.
+
+aux = data.groupby(['Nombre del país']).size()
+aux.sort_values(ascending=False)
+
+# 21.
+
+aux = data.groupby(['Fecha de diagnóstico']).size()
+aux.sort_values(ascending=False)
+
 
 
 
