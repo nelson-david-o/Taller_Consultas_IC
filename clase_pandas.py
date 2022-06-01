@@ -195,14 +195,27 @@ aux.sort_values(ascending=False)
 
 # 22.
 
-cantidad_muertes = data[data['Estado'] == 'Fallecido'].shape[0]
+canti_muertes = data[data['Estado'] == 'Fallecido'].shape[0]
 
-cantidad_recuperados = data.query('Recuperado == "Recuperado"').shape[0]
+canti_recuperados = data.query('Recuperado == "Recuperado"').shape[0]
 cantidad_casos = data.shape[0]
 
-tasa_mortalidad = cantidad_muertes / cantidad_casos * 100
+tasa_mortalidad = canti_muertes / cantidad_casos * 100
 
-tasa_recuperacion = cantidad_recuperados / cantidad_casos * 100
+tasa_recuperacion = canti_recuperados / cantidad_casos * 100
+
+# 23. 
+
+canti_muertes_departamento = data[data['Estado'] == 'Fallecido'].groupby('Nombre departamento').size()
+
+canti_recuperados_departamento = data[data['Recuperado'] == 'Recuperado'].groupby('Nombre departamento').size()
+cantidad_casos = data.groupby('Nombre departamento').size()
+
+tasa_mortalidad = canti_muertes_departamento / cantidad_casos * 100
+
+tasa_recuperacion = canti_recuperados_departamento / cantidad_casos * 100
+
+data2 = pd.DataFrame({'tasa_mortalidad_dep': tasa_mortalidad, 'tasa_recuperacion_dep':tasa_recuperacion})
 
 
 
