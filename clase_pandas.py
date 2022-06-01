@@ -122,6 +122,15 @@ data['Nombre municipio'].value_counts()
 
 data['Nombre municipio'].nunique()
 
+# 4. Número de personas que se encuentran en atención en casa
+
+aux = data.loc[(data['Ubicación del caso'] == 'Casa')]
+NumeroDePersonasEnCasa = aux.shape[0]
+
+# 5. Número de personas que se encuentran recuperados
+
+aux = data.loc[(data['Recuperado'] == 'Recuperado')]
+NumeroDePersonasRecuper = aux.shape[0]
 
 
 
