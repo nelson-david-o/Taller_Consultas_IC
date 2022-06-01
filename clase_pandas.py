@@ -231,6 +231,20 @@ recuperacion_ciudad = canti_recuperados_ciudad / canti_casos_ciudad * 100
 
 data3 = pd.DataFrame({'tasa_mortalidad_ciu': mortalidad_ciudad, 'tasa_recuperacion_ciu': recuperacion_ciudad})
 
+# 25.
+
+data.groupby(['Nombre municipio', 'Ubicación del caso']).size()
+
+# 26. 
+
+data.groupby(['Nombre municipio', 'Sexo'])['Edad'].mean()
+
+# 27.
+
+data[(data['Recuperado'] == 'Recuperado')].groupby('Fecha de diagnóstico').size().plot()
+
+data[(data['Estado'] == 'Fallecido')].groupby('Fecha de diagnóstico').size().plot()
+
 
 
 
