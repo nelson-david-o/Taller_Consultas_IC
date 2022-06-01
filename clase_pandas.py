@@ -159,6 +159,16 @@ aux.sort_values(ascending=False).head(10)
 
 data['Nombre municipio'].value_counts().head(10)
 
+# 15. 
+
+aux = data[(data['Estado'] == 'Fallecido')].groupby('Nombre municipio').size()
+aux.sort_values(ascending=False).head(10)
+
+# 16.
+
+aux = data[(data['Recuperado'] == 'Recuperado')].groupby('Nombre municipio').size()
+aux.sort_values(ascending=False).head(10)
+
 
 
 
