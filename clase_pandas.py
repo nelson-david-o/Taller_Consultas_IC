@@ -169,6 +169,16 @@ aux.sort_values(ascending=False).head(10)
 aux = data[(data['Recuperado'] == 'Recuperado')].groupby('Nombre municipio').size()
 aux.sort_values(ascending=False).head(10)
 
+# 17.
+
+aux = data.groupby(['Nombre departamento', 'Nombre municipio']).size()
+aux.sort_values(ascending=False)
+
+# 18.
+
+aux = data.groupby(['Nombre departamento', 'Nombre municipio', 'Sexo']).size()
+aux.sort_values(ascending=False)
+
 
 
 
